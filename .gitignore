@@ -1,0 +1,6 @@
+/.idea
+/bot_tools.egg-info
+/bot_tools_onlythor.egg-info
+/build
+/dist
+/bot_tools/__pycache__
