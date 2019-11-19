@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="bot-tools-onlythor",  # Replace with your own username
+    name="bot-tools",
     version=__version__,
     author="Thor",
     author_email="theonlythor@protonmail.com",
@@ -19,5 +19,6 @@ setuptools.setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7"
     ],
+    install_requires=['colorama'],
     python_requires='>=3.6'
 )

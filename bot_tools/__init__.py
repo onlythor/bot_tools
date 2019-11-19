@@ -1,10 +1,13 @@
-__version__ = "1.0.0"
+__version__ = "1.0.5"
 import os
 import json
 import time
 import shutil
 import io
 from pathlib import Path
+from colorama import Fore
+
+BT_LOG_LEVEL = 1
 
 
 class BotTools:
@@ -128,3 +131,16 @@ class BotTools:
     def list_files(path, file_type):
         # get all files in a folder and sub folders based on type
         return list(Path(path).rglob("*."+file_type))
+
+    @staticmethod
+    def log(message, log_level=1, log_type='NOTICE', color=Fore.CYAN):
+        if log_level >= BT_LOG_LEVEL:
+            if log_level == 1:
+                print(Fore.GREEN + '[NOTICE] ' + str(message) + Fore.RESET)
+            if log_level == 2:
+                print(Fore.YELLOW + '[WARNING] ' + str(message) + Fore.RESET)
+            if log_level == 3:
+                print(Fore.RED + '[ERROR] ' + str(message) + Fore.RESET)
+            if log_level == 4:
+                print(color + '[' + log_type + '] ' + str(message) + Fore.RESET)
+

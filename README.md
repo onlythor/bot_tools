@@ -1,4 +1,4 @@
-Bot Tools 1.0.0
+Bot Tools
 =======
 
 **Common tools for python bots**
