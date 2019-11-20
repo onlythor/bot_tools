@@ -13,22 +13,6 @@ BT_LOG_LEVEL = 1
 class BotTools:
 
     @staticmethod
-    def check_folder(folder):
-        # create the target folder
-        try:
-            if not os.path.isdir(folder):
-                try:
-                    os.mkdir(folder)
-                    return True
-                except OSError as e:
-                    error = "ignore"
-            return False
-        except Exception as e:
-            print("Fatal: check_folder: "+folder)
-            print(e)
-            return False
-
-    @staticmethod
     def write_json(path, content):
         # write json to a plain text file
         while True:
