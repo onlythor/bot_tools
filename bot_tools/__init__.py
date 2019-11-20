@@ -1,4 +1,4 @@
-__version__ = "1.0.5"
+__version__ = "1.0.6"
 import os
 import json
 import time
@@ -143,4 +143,21 @@ class BotTools:
                 print(Fore.RED + '[ERROR] ' + str(message) + Fore.RESET)
             if log_level == 4:
                 print(color + '[' + log_type + '] ' + str(message) + Fore.RESET)
+
+    @staticmethod
+    def check_folder(folder):
+        # create the target folder
+        try:
+            if not os.path.isdir(folder):
+                try:
+                    os.mkdir(folder)
+                    return True
+                except OSError as e:
+                    BotTools.log('Unable to create folder', 4)
+                    BotTools.log(e, 4)
+            return False
+        except Exception as e:
+            BotTools.log('Unable to create folder', 4)
+            BotTools.log(e, 4)
+            return False
 
